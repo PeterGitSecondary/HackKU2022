@@ -1,8 +1,13 @@
 pull_request_rules:
-  - name: Automatic merge when images are changed in the community upload dir.
+  - name: Automatic merge when images are changed in the community_upload dir.
     conditions:
-      - files~=^(!?Community_Upload/)
-      - base=main
+      - and:
+          - files~=^(!?Community_Upload/)
+          - base=main
+          - or:
+              - files~=.png
+              - files~=.jpeg
+              - files~=.jpg
     actions:
       merge:
         method: merge
