@@ -8,6 +8,7 @@ pull_request_rules:
               - files~=.png
               - files~=.jpeg
               - files~=.jpg
+              - files~=.txt
     actions:
       merge:
         method: merge
